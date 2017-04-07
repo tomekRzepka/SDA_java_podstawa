@@ -8,8 +8,8 @@ import java.util.Scanner;
 public class zajecia4 {
     public static void main(String[] args) {
 
-        int day,month,year;
-        int []array ={1,9,2,8,3,7,4,6,5,15};
+      //  int day,month,year;
+        //int []array ={1,9,2,8,3,7,4,6,5,15};
         /*Scanner scanner = new Scanner(System.in);
 
         System.out.println("Insert a day number");
@@ -30,11 +30,45 @@ public class zajecia4 {
 //        System.out.println("srednia : "+ avg);
 //        int span= span(array);
 //        System.out.println("Size of : "+ span);
-        reversArray(array);
-        statistics(array);
+//        reversArray(array);
+       statistics(getArrayFromUser());
+      //  getArrayFromUser();
+     //   showArray(getArrayFromUser());
     }
 
-    public static void reversArray(int[]array){
+
+
+    //**********************************************************
+
+    public static void showArray(int [] array){
+        for(int i=0; i< array.length;i++){
+            if(i==array.length-1){
+                System.out.print(array[i]);
+            }else{
+                System.out.print(array[i]+", ");
+            }
+        }
+
+    }
+
+
+    //****************************************
+
+    public static int[]getArrayFromUser(){
+        Scanner scanner= new Scanner(System.in);
+        System.out.println("Insert size of new Array");
+        int size=scanner.nextInt();
+        int[] array = new int [size];
+        for (int i=0;i<array.length;i++){
+            System.out.println("Insert value of "+i + " element");
+            array[i]=scanner.nextInt();
+        }
+        return  array;
+    }
+
+    //********************************************
+
+    public static void  reversArray(int[]array){
         System.out.print("[");
         for(int i=array.length-1;i>=0;i--){
             System.out.print(array[i]);
@@ -43,7 +77,8 @@ public class zajecia4 {
             }
 
         }
-        System.out.println("]");
+        System.out.print("]");
+
     }
 
 
@@ -54,6 +89,10 @@ public class zajecia4 {
         System.out.println("Sum " +sumOfElements(array) );
         System.out.println("Avg " + avgOfArray(array));
         System.out.println("Span " + spanOfArray(array));
+
+        showArray(array);
+        System.out.println();
+        reversArray(array);
     }
 
     //*********************************************
