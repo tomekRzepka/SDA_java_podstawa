@@ -31,9 +31,31 @@ public class zajecia4 {
 //        int span= span(array);
 //        System.out.println("Size of : "+ span);
 //        reversArray(array);
-       statistics(getArrayFromUser());
+       //statistics(getArrayFromUser());
       //  getArrayFromUser();
      //   showArray(getArrayFromUser());
+
+  int [] arrayFromU= getArrayFromUser();
+        displayReversed(arrayFromU);
+
+
+
+    }
+    //********************************************************
+
+    public  static void displayReversed(int [] array){
+        displayReversed(revArray(array));
+    }
+
+    //******************************************************
+
+    public static int [] revArray(int [] array){
+        int [] newArray = new int [array.length];
+        for(int i=0;i<array.length;i++){
+            //newArray[i]= array[array.length-i-1];
+            newArray[array.length-i-1]=array[i];
+        }
+        return newArray;
     }
 
 
@@ -93,6 +115,7 @@ public class zajecia4 {
         showArray(array);
         System.out.println();
         reversArray(array);
+        revArray(array);
     }
 
     //*********************************************
