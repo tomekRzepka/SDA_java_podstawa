@@ -41,6 +41,12 @@ public class zajecia4 {
 
 
     }
+    //************************************************
+
+    public static void displayArray(int [] array){
+        System.out.println(array);
+    }
+
     //********************************************************
 
     public  static void displayReversed(int [] array){
