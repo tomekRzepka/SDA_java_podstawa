@@ -46,9 +46,36 @@ public class Zajecia5 {
         //System.out.println();
         //printChessBoard(5);
         //System.out.println();
-        printTree(3);
-
+       // printTree(5);
+        //homeWork();
+        lineOfNumbers(5);
     }
+    //************************************************
+
+
+
+    //************************************************
+    public static void lineOfNumbers(int value){
+        for (int i = 0; i < value; i++) {
+            for (int j = 0; j < i  ; j++) {
+                System.out.print("  ");
+
+            }
+            System.out.println(i+1);
+
+        }
+    }
+
+
+    //************************************************
+    public static void homeWork(){
+        Random random = new Random();
+        int size= random.nextInt(10)+15;
+        getArray(size);
+        zajecia4.statistics(getArray(size));
+        printTree(size-12);
+    }
+
     //**********************************************
     public static void printTree(int a) {
         for (int i = 0; i < a; i++) {
@@ -68,8 +95,8 @@ public class Zajecia5 {
                 System.out.print("  ");
 
             }
-            System.out.print("*");
-            System.out.println();
+            System.out.println("*");
+
         }
     }
 

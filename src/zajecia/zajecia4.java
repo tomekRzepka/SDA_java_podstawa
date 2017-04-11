@@ -122,6 +122,7 @@ public class zajecia4 {
         System.out.println();
         reversArray(array);
         revArray(array);
+        System.out.println();
     }
 
     //*********************************************
