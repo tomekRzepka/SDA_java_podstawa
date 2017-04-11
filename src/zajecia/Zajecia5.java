@@ -42,27 +42,36 @@ public class Zajecia5 {
         // printTriangle(5);
         //printMatrixOfNumber(5);
         // printMatrixOfBool(5);
-        printEmptySquare(5);
-        System.out.println();
-        printChessBoard(5);
-        System.out.println();
-
+      //  printEmptySquare(5);
+        //System.out.println();
+        //printChessBoard(5);
+        //System.out.println();
+        printTree(3);
 
     }
     //**********************************************
     public static void printTree(int a) {
         for (int i = 0; i < a; i++) {
-            if(i!=a){
-            for (int j = 0; j < a-i-1; j++) {
-                System.out.println(" ");
+
+            for (int j = 0; j < a - i - 1; j++) {
+                System.out.print("  ");
             }
-            for(int j=0;j<2*i+1;j++){
-                System.out.println("* ");
+            for (int j = 0; j < 2 * i + 1; j++) {
+                System.out.print("* ");
             }
+            System.out.println();
+
+
+        }
+        for (int i = 0; i < a; i++) {
+            for (int j = 0; j < a-1  ; j++) {
+                System.out.print("  ");
+
+            }
+            System.out.print("*");
             System.out.println();
         }
     }
-        }
 
     //********************************************************************
     public static int[] getRandomArray(int size) {
