@@ -44,7 +44,14 @@ public class zajecia4 {
     //************************************************
 
     public static void displayArray(int [] array){
-        System.out.println(array);
+       for (int i=0; i<array.length;i++){
+       if(i!= array.length-1){
+        System.out.print(array[i]+", ");
+    }else{
+            System.out.println(array[i]);
+        }
+
+        }
     }
 
     //********************************************************

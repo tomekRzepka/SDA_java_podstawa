@@ -25,26 +25,86 @@ public class Zajecia6 {
         //sumUntil(array,number);
         //game();
 
-        numberOfDigits(354);
+        //numberOfDigits(354);
+     //zajecia4.displayArray(numberToArray(356));
+
+
     }
+    //**********************************************************************
+    public static int arrayToNumber (int[]array){
+//        int i=0;
+        int sum=0;
+        int valuetoMultiply=1;
+//        while(i<array.length){
+//            sum+= array[array.length-1-i]*valuetoMultiply;
+//            valuetoMultiply*=10;
+//            i++;
+//         }
+
+        for (int i =0;i<array.length;i++){
+            sum+= array[array.length-1-i]*valuetoMultiply;
+            valuetoMultiply*=10;
+        }
+            return sum;
+
+    }
+
+
+    //************************************************************
+    public static int[]numberToArray (int number){
+
+        int []array = new int[numberOfDigits(number)];
+        int i=0;
+
+        while(i<array.length){
+            array[array.length-1-i]=number%10;
+            number/=10;
+
+            i++;
+
+        }
+//        for(int j=0;j<array.length;j++){
+//            array[array.length-1-i]=number%10;
+//            number/=10;
+//        }
+
+        return array;
+    }
+
+
+    //**************************************************************
+    public static int sumOfRandom(int value){
+        Random random = new Random();
+        int sum=0;
+        int i=0;
+        while (sum <value){
+            sum+= random.nextInt(30)-10;
+            i++;
+        }
+        return i;
+
+    }
+
+
     //**************************************************************
 
-//    public static int sumOfDigits(int number){
-//        int counter=0;
-//        while(number !=0){
-//            number /=10;
-//            counter++;
-//        }
-//    }
+    public static int sumOfDigits(int number){
+        int sum=0;
+        while(number !=0){
+            sum +=number%10;
+            number /=10;
+        }
+        return sum;
+    }
 
     //*************************************************************
     public static int numberOfDigits(int number){
         int position=0;
-        while(number!=0){
+        while(number>0){
             number/=10;
             position++;
         }
-        System.out.println(position);
+
         return position;
     }
 
@@ -52,17 +112,21 @@ public class Zajecia6 {
     public static int game(){
         Scanner scanner= new Scanner(System.in);
         Random random = new Random();
+        int bound=100;
+        int offset=0;
         int number= random.nextInt(100);
         int userNumber=-1;
         int i=0;
         while(userNumber!=number){
             System.out.println("Insert a number");
-            userNumber= random.nextInt(100);
+            userNumber= random.nextInt(bound-offset)+offset;
             System.out.println(userNumber);
             if(userNumber>number){
                 System.out.println("It's too big. Try again!!");
+                bound=userNumber;
             }else if(userNumber<number){
                 System.out.println("It's too small. Try again!!");
+                offset=userNumber;
             }
             i++;
 
