@@ -69,7 +69,7 @@ public class WheelAndCross {
 
     }
     public static boolean checkDiagonals(char [][] gameBoard){
-        return !isFieldEmpty(gameBoard,1,1)&&(checkFirstDiagonal(gameBoard)||checkFirstSecond(gameBoard))
+        return !isFieldEmpty(gameBoard,1,1)&&(checkFirstDiagonal(gameBoard)||checkFirstSecond(gameBoard));
 //        boolean end=false;
 //        int i=0;
 //        while(i<gameBoard.length && end==false){
@@ -92,10 +92,10 @@ public class WheelAndCross {
 
     public static boolean validatePositionFromUser(int positionFromUser, char[][]gameboard){
         int[] ints =convertPosition(positionFromUser);
-        return(positionFromUser>0&&positionFromUser<10&&isFielempty(gameboard,ints[0],ints [1]));
+        return(positionFromUser>0&&positionFromUser<10&&isFieldEmpty(gameboard,ints[0],ints [1]));
     }
     public static boolean isFieldEmpty(char[][]gameBoard,int i, int j){
-        return !(gameBoard[i][j]==)
+        return !(isFieldEmpty(gameBoard, i, j));
     }
 
 
