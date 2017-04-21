@@ -12,6 +12,10 @@ public class zajecia9 {
 
 
     }
+
+
+
+
     public static double[][] avgTwoMatrix(int [][] matrix1,int [][] matrix2) {
         int rows = matrix1.length;
         int columns = matrix1[0].length;
@@ -103,7 +107,51 @@ public class zajecia9 {
 
 
     }
+    public static boolean checkRoundBraces(String expression){
+    int counter=0;
+        int i=0;
+        char [] expArray= expression.toCharArray();
+        while(counter>=0&&counter<expArray.length ){
+            if(expArray[i]=='('){
+                counter++;
+            }else if(expArray[i]==')'){
+                counter--;
+            }
+            i++;
+        }
+        return counter == 0;
+    }
 
+
+    public static int countAll(String message,String sentence){
+    int counter =0;
+        while(find(message,sentence)!=-1){
+            counter ++;
+            message=message.substring(find(message,sentence)+1);
+        }
+        return counter;
+
+
+    }
+
+    public static int find(String message , String sentence){
+        char [] messageArray = message.toCharArray();
+        boolean flag =true;
+        int i=0;
+        char [] sentenceArray=sentence.toCharArray();
+        while (flag && i <=messageArray.length - sentenceArray.length){
+            int j=0;
+            while(j<sentenceArray.length&&messageArray[i+j]==sentenceArray[j]){
+                j++;
+                if(j==sentenceArray.length){
+                    flag=false;
+                }
+            }
+            i++;
+        }
+        return flag ?-1:i-1;
+
+    }
     public static int find(String message, char sentence ){
         char [] charArray = message.toCharArray();
 
