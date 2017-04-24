@@ -12,6 +12,28 @@ public class zadanie10 {
        // readFromFileTest(Tekstowy);
         File file= new File("C:\\Users\\RENT\\IdeaProjects\\SDA_java_podstawa\\file");
     }
+    public static int countWordsInFile(File file) throws FileNotFoundException {
+        Scanner scanner = new Scanner(file);
+        int counter=0;
+        while(scanner.hasNext()){
+                scanner.next();
+                counter++;
+
+        }
+
+        return counter;
+
+    }
+    public static int countOddIntegers(File file) throws FileNotFoundException{
+        Scanner scanner = new Scanner(file);
+        int counter=0;
+        while (scanner.hasNextInt()){
+            if (scanner.nextInt()%2==1){
+                counter++;
+            }
+        }
+        return counter;
+    }
 
     public static int[] readIntegersFromFiles(File file) throws FileNotFoundException {
         Scanner scanner= new Scanner(file);
