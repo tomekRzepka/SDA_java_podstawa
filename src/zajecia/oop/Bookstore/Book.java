@@ -6,13 +6,14 @@ import java.util.Arrays;
  * Created by RENT on 2017-04-24.
  */
 public class Book {
-    public String title;
-    public String description;
-    public String author;
-    public String releaseDate;
-    public int size;
-    public String ISBN;
-    public String [] content;
+
+    private String title;
+    private int size;
+    private String description;
+    private String author;
+    private String releaseDate;
+    private String ISBN;
+    private String [] content;
 
     public Book(String title, String author, String releaseDate, String ISBN){
         this.title = title;
@@ -21,6 +22,65 @@ public class Book {
         this.ISBN=ISBN;
         this.description="To be updated";
     }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public String getReleaseDate() {
+        return releaseDate;
+    }
+
+    public String getISBN() {
+        return ISBN;
+    }
+
+    public String[] getContent() {
+        return content;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public void setReleaseDate(String releaseDate) {
+        this.releaseDate = releaseDate;
+    }
+
+    public void setISBN(String ISBN) {
+        this.ISBN = ISBN;
+    }
+
+    public void setContent(String[] content) {
+        this.content = content;
+    }
+
+
+
 
     @Override
     public String toString() {
