@@ -6,7 +6,7 @@ package zajecia.oop.Bookstore;
 public class Bookstore {
     public Book[]books;
     public int numberOfBooks;
-public Bookstore() {
+    public Bookstore() {
     this.books = new Book[100];
     this.numberOfBooks=0;
 }
@@ -47,6 +47,20 @@ public Bookstore() {
 
         }
         return booksToReturn;
+    }
+    public Book getBook(String ISBN){
+        Book book=null;
+        int i=0;
+        while(i<this.numberOfBooks && book==null){
+            if(books[i].ISBN.equals(ISBN)){
+                book=books[i];
+            }
+           // book=books[i].ISBN.equals(ISBN)? books[i]:null;
+            i++;
+
+        }
+
+        return book;
     }
 
 }
