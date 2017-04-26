@@ -12,32 +12,36 @@ public class Quiz {
         MockQuestionsRepository questionsRepository=new MockQuestionsRepository();
         MockResultRepository resultRepository=new MockResultRepository();
         QuizInteface quizInteface= new QuizInteface();
+        // int decision =0;
+        //while {decision!=0)
 
-        int decision = quizInteface.menu();
-        if(decision==1){
-            String playerName = quizInteface.inserName();
-            quizInteface.beforStart();
-            Question[] questions = questionsRepository.getQuestions();
-            int correctAnswersCounter=0;
-            for (int i = 0; i <questions.length ; i++) {
-                boolean result = quizInteface.showQuestions(questions[i]);
-                if(result){
-                    quizInteface.correctAnswer();
-                    correctAnswersCounter++;
-                }else{
-                    quizInteface.incorrectAnswer();
+        boolean gameFlag=true;
+        while(gameFlag) {
+            int decision = quizInteface.menu();
+            if (decision == 1) {
+                String playerName = quizInteface.inserName();
+                quizInteface.beforStart();
+                Question[] questions = questionsRepository.getQuestions();
+                int correctAnswersCounter = 0;
+                for (int i = 0; i < questions.length; i++) {
+                    boolean result = quizInteface.showQuestions(questions[i]);
+                    if (result) {
+                        quizInteface.correctAnswer();
+                        correctAnswersCounter++;
+                    } else {
+                        quizInteface.incorrectAnswer();
+                    }
+
                 }
+                quizInteface.showResult(playerName, correctAnswersCounter);
 
+
+            } else if (decision == 2) {
+                quizInteface.showTopResults(resultRepository.getTopResults(10));
+            } else if (decision == 3) {
+                gameFlag = false;
             }
-            quizInteface.showResult(playerName,correctAnswersCounter);
-
-
-        }else if (decision==2){
-            quizInteface.showTopResults(resultRepository.getTopResults(10));
-        }else if (decision==3){
-            System.out.println("End Game");
         }
-
 
     }
 
