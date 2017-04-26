@@ -2,6 +2,7 @@ package zajecia.oop.Quiz;
 
 import zajecia.oop.Quiz.Question.MockQuestionsRepository;
 import zajecia.oop.Quiz.Question.Question;
+import zajecia.oop.Quiz.result.FileResultsRepository;
 import zajecia.oop.Quiz.result.MockResultRepository;
 import zajecia.oop.Quiz.result.Result;
 
@@ -11,7 +12,7 @@ import zajecia.oop.Quiz.result.Result;
 public class Quiz {
     public static void main(String[] args) {
         MockQuestionsRepository questionsRepository=new MockQuestionsRepository();
-        MockResultRepository resultRepository=new MockResultRepository();
+        FileResultsRepository resultRepository=new FileResultsRepository("C:\\Users\\RENT\\IdeaProjects\\SDA_java_podstawa\\Results.txt");
         QuizInteface quizInteface= new QuizInteface();
         // int decision =0;
         //while {decision!=0)
@@ -37,7 +38,7 @@ public class Quiz {
                     }
                     Result result = new Result(playerName,correctAnswersCounter);
                     quizInteface.showResult(result);
-                    resultRepository.addNewResult(result);
+                    resultRepository.add(result);
                 break;
 
                 case 2:
