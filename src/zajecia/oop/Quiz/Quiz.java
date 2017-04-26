@@ -18,31 +18,35 @@ public class Quiz {
         boolean gameFlag=true;
         while(gameFlag) {
             int decision = quizInteface.menu();
-            if (decision == 1) {
-                String playerName = quizInteface.inserName();
-                quizInteface.beforStart();
-                Question[] questions = questionsRepository.getQuestions();
-                int correctAnswersCounter = 0;
-                for (int i = 0; i < questions.length; i++) {
-                    boolean result = quizInteface.showQuestions(questions[i]);
-                    if (result) {
-                        quizInteface.correctAnswer();
-                        correctAnswersCounter++;
-                    } else {
-                        quizInteface.incorrectAnswer();
+            switch (decision) {
+                case 1:
+                    String playerName = quizInteface.inserName();
+                    quizInteface.beforStart();
+                    Question[] questions = questionsRepository.getQuestions();
+                    int correctAnswersCounter = 0;
+                    for (int i = 0; i < questions.length; i++) {
+                        boolean result = quizInteface.showQuestions(questions[i]);
+                        if (result) {
+                            quizInteface.correctAnswer();
+                            correctAnswersCounter++;
+                        } else {
+                            quizInteface.incorrectAnswer();
+                        }
+
                     }
+                    quizInteface.showResult(playerName, correctAnswersCounter);
+                break;
 
-                }
-                quizInteface.showResult(playerName, correctAnswersCounter);
-
-
-            } else if (decision == 2) {
-                quizInteface.showTopResults(resultRepository.getTopResults(10));
-            } else if (decision == 3) {
-                gameFlag = false;
+                case 2:
+                    quizInteface.showTopResults(resultRepository.getTopResults(10));
+                break;
+                case 0:
+                    gameFlag = false;
+                break;
+                default:
+                    System.out.println("wrong decision");
             }
         }
-
     }
 
 
