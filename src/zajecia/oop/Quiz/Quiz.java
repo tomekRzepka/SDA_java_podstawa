@@ -33,7 +33,7 @@ public class Quiz {
 
 
         }else if (decision==2){
-            quizInteface.showResults(resultRepository.getAllResults());
+            quizInteface.showTopResults(resultRepository.getTopResults(10));
         }else if (decision==3){
             System.out.println("End Game");
         }
