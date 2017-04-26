@@ -54,8 +54,8 @@ public class QuizInteface {
         System.out.println("Wrong answer");
         scanner.nextLine();
     }
-    public void showResult(String name, int result){
-        System.out.println("Congratulation "+name+"! You finished game with score: "+result);
+    public void showResult(Result result){
+        System.out.println("Congratulation "+result.getPlayerName()+"! You finished game with score: "+result.getResult());
     }
     public  void showResults(Result[] results){
         System.out.println("Hall of fame: ");

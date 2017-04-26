@@ -6,21 +6,34 @@ package zajecia.oop.Quiz.result;
 public class MockResultRepository {
 
     private Result[] result;
+    private int resultsCouter;
+
     public MockResultRepository(){
-        result= new Result[2];
-        result[0]= new Result("Andrzej",3);
-        result[1]= new Result("Jan",2);
+        this.resultsCouter=0;
+        this.result= new Result[100];
+        addNewResult( new Result("Andrzej",3));
+        addNewResult(new Result("Jan",2));
+
     }
     public Result [] getAllResults(){
+        Result [] resultToReturn = new Result[resultsCouter];
+
+            for (int i = 0; i <resultsCouter ; i++) {
+                resultToReturn[i]=result[i];
+            }
 
         return result;
     }
     public Result[] getTopResults(int n){
         Result[] resultsToReturn= new Result[n];
-        int loopSize=n<result.length?n:result.length;
+        int loopSize=n<resultsCouter ?n :resultsCouter;
         for (int i = 0; i <loopSize ; i++) {
             resultsToReturn[i]=result[i];
         }
         return resultsToReturn;
+    }
+    public void addNewResult(Result result){
+        this.result[resultsCouter]=result;
+        resultsCouter++;
     }
 }
