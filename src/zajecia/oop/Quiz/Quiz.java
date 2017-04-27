@@ -1,18 +1,21 @@
 package zajecia.oop.Quiz;
 
+import zajecia.oop.Quiz.Question.FileQestionsRepository;
 import zajecia.oop.Quiz.Question.MockQuestionsRepository;
 import zajecia.oop.Quiz.Question.Question;
+import zajecia.oop.Quiz.Question.QuestionsRepository;
 import zajecia.oop.Quiz.result.FileResultsRepository;
 import zajecia.oop.Quiz.result.MockResultRepository;
 import zajecia.oop.Quiz.result.Result;
+import zajecia.oop.Quiz.result.ResultsRepository;
 
 /**
  * Created by RENT on 2017-04-25.
  */
 public class Quiz {
     public static void main(String[] args) {
-        MockQuestionsRepository questionsRepository=new MockQuestionsRepository();
-        FileResultsRepository resultRepository=new FileResultsRepository("C:\\Users\\RENT\\IdeaProjects\\SDA_java_podstawa\\Results.txt");
+        QuestionsRepository questionsRepository=new FileQestionsRepository("C:\\Users\\RENT\\IdeaProjects\\SDA_java_podstawa\\quiz.txt");
+        ResultsRepository resultRepository=new FileResultsRepository("C:\\Users\\RENT\\IdeaProjects\\SDA_java_podstawa\\Results.txt");
         QuizInteface quizInteface= new QuizInteface();
         // int decision =0;
         //while {decision!=0)

@@ -3,7 +3,7 @@ package zajecia.oop.Quiz.result;
 /**
  * Created by RENT on 2017-04-25.
  */
-public class MockResultRepository {
+public class MockResultRepository implements ResultsRepository {
 
     private Result[] result;
     private int resultsCouter;
@@ -11,8 +11,8 @@ public class MockResultRepository {
     public MockResultRepository(){
         this.resultsCouter=0;
         this.result= new Result[100];
-        addNewResult( new Result("Andrzej",3));
-        addNewResult(new Result("Jan",2));
+        add( new Result("Andrzej",3));
+        add(new Result("Jan",2));
 
     }
     public Result [] getAllResults(){
@@ -32,7 +32,7 @@ public class MockResultRepository {
         }
         return resultsToReturn;
     }
-    public void addNewResult(Result result){
+    public void add(Result result){
         this.result[resultsCouter]=result;
         resultsCouter++;
     }
